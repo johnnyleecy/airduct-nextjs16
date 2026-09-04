@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { navCategories } from "@/lib/services";
+import { navCategories, specialtyServices } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
@@ -63,6 +63,32 @@ export default function Header() {
               </div>
             ))}
 
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setOpenMenu(openMenu === "specialty" ? null : "specialty")}
+                className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+                aria-expanded={openMenu === "specialty"}
+              >
+                技術專長
+                <span aria-hidden="true" className="text-xs">▾</span>
+              </button>
+              {openMenu === "specialty" && (
+                <div className="absolute left-0 top-full mt-1 w-72 rounded-xl border border-slate-200 bg-white p-2 shadow-lg">
+                  {specialtyServices.map((s) => (
+                    <Link
+                      key={s.slug}
+                      href={s.href}
+                      onClick={() => setOpenMenu(null)}
+                      className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-700"
+                    >
+                      {s.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Link href="/book" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">
               如何預約維修？
             </Link>
@@ -115,6 +141,21 @@ export default function Header() {
                 ))}
               </div>
             ))}
+            <div className="my-3">
+              <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                技術專長
+              </p>
+              {specialtyServices.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={s.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-700"
+                >
+                  {s.title}
+                </Link>
+              ))}
+            </div>
             <Link href="/book" onClick={() => setMobileOpen(false)} className="mt-2 block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">
               如何預約維修？
             </Link>

@@ -45,7 +45,7 @@ export default function ContactPage() {
             className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:shadow-md"
           >
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-400">電話</p>
-            <p className="mt-2 font-bold text-slate-900">24小時緊急維修熱線</p>
+            <p className="mt-2 font-bold text-slate-900">預約維修・報價熱線</p>
             <p className="mt-1 text-sm text-slate-500">{siteConfig.phone}</p>
           </a>
           <a

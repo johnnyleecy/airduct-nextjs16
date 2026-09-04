@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -28,6 +29,14 @@ const faqs = [
       "標準安裝包括機架、基本喉管、雪種接駁及測試，費用透明；如需要搭棚、加長喉管或特別安裝位置，會提前報價確認。",
   },
 ];
+
+const priceTable = [
+  ["安裝掛牆分體", "可代買機、代搭棚", "$4,200起"],
+  ["安裝四面出風（天花機）", "可代買機、代搭棚", "$6,000起"],
+  ["安裝Fan Coil(FCU)", "可代買機、代搭棚", "看相報價或者現場睇位報價"],
+  ["安裝VRV冷氣系統", "可代買機、代搭棚", "看標書或者現場睇位報價"],
+];
+
 
 export default function DismantleInstallPage() {
   return (
@@ -65,6 +74,17 @@ export default function DismantleInstallPage() {
           換冷氣機最怕遇到「裝機快、拆機慢」嘅師傅，又或者安裝位唔啱、喉管外露影響外觀。富成工程公司提供<b>冷氣機拆除及安裝</b>一站式服務：由舊機拆除、搬遷，到新機安裝、測試，一次過搞掂，明碼實價。
         </p>
 
+        <div className="mt-5 relative h-[250px] md:h-[450px]  w-full">
+                  <Image
+                    src="/images/banner/dismantle-install.jpeg"
+                    alt="冷氣通風工程服務"
+                    fill
+                    sizes="(max-width:1024px) 100vw, 50vw"
+                    className="object-cover rounded-2xl"
+                    priority
+                  />
+                </div>
+
         <h2 className="mt-12 text-2xl font-bold text-slate-900">我哋嘅拆除及安裝服務</h2>
 
         <div className="mt-6 space-y-6">
@@ -99,6 +119,29 @@ export default function DismantleInstallPage() {
             </p>
           </div>
         </div>
+
+        <h2 className="mt-12 text-2xl font-bold text-slate-900">收費參考</h2>
+        <div className="mt-5 overflow-hidden rounded-xl border border-slate-200">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-slate-50 text-slate-500">
+              <tr>
+                <th className="px-4 py-3 font-semibold">服務</th>
+                <th className="px-4 py-3 font-semibold">服務範疇</th>
+                <th className="px-4 py-3 font-semibold">收費參考</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {priceTable.map(([s, scene, price]) => (
+                <tr key={s}>
+                  <td className="px-4 py-3 font-medium text-slate-900">{s}</td>
+                  <td className="px-4 py-3 text-slate-500">{scene}</td>
+                  <td className="px-4 py-3 text-slate-700">{price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-2 text-xs text-slate-400">*實際收費視乎機型、匹數及數量，歡迎查詢報價。</p>
 
         <h2 className="mt-12 text-2xl font-bold text-slate-900">安裝流程</h2>
         <ol className="mt-5 list-decimal space-y-2 pl-5 text-slate-600">

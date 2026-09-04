@@ -60,7 +60,7 @@ export default function BookPage() {
               name: "報價後幾時可以開工？",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "確認報價後，視乎工程規模一般可於 1–2 星期內安排開工；緊急維修可安排即日或翌日處理。商業場地可安排夜間、休市時段施工，減少影響營運。",
+                text: "確認報價後，視乎工程規模一般可於 1–2 星期內安排開工；商業場地可安排夜間、休市時段施工，減少影響營運。",
               },
             },
             {
@@ -101,7 +101,6 @@ export default function BookPage() {
           <ul className="mt-4 space-y-2 text-sm text-slate-600">
             <li>・ 全港各區服務：{siteConfig.regions}</li>
             <li>・ 辦公時間：{siteConfig.hours}</li>
-            <li>・ 緊急維修：24小時熱線支援</li>
           </ul>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a

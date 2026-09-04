@@ -8,6 +8,7 @@ export type Service = {
   title: string;
   description: string;
   keywords: string[];
+  image?: string; // 新增：服務卡片圖片路徑
 };
 
 export type ServiceCategory = {
@@ -29,14 +30,16 @@ export const navCategories: ServiceCategory[] = [
         description:
           "租鋪前場地可行性評估、出牌風險分析，避免租錯鋪、慳返改裝成本。",
         keywords: ["場地可行性評估", "出牌顧問", "牌照申請"],
+        image: "/images/services/License-SiteConsultant.jpg",
       },
       {
         slug: "licensing-consulting",
         href: "/services/licensing-consulting",
-        title: "專業牌照顧問服務",
+        title: "專業牌照代購服務",
         description:
-          "食肆通風牌照顧問、各類食肆牌照申請、Form D 證書及出牌工程一條龍。",
-        keywords: ["食肆通風牌", "牌照顧問", "Form D"],
+          "食肆通風牌照代購、協助符合政府規格",
+        keywords: ["食肆通風牌", "牌照代購"],
+        image: "/images/services/Professional-License-Application-Consultant-Services.jpg",
       },
     ],
   },
@@ -51,6 +54,7 @@ export const navCategories: ServiceCategory[] = [
         description:
           "鮮風抽氣系統、風喉風槽製作安裝、風咀定制，符合食環署及消防出牌標準。",
         keywords: ["風喉工程", "鮮風抽氣系統", "風喉安裝"],
+        image: "/images/services/Ventilatio-Air-Supply-System-Engineering.jpg",
       },
       {
         slug: "air-conditioning-engineering",
@@ -59,6 +63,7 @@ export const navCategories: ServiceCategory[] = [
         description:
           "水冷式中央冷氣（Chiller）、VRV多聯機、分體式冷氣、Fan Coil，一條龍。",
         keywords: ["冷氣安裝", "中央冷氣安裝", "VRV冷氣安裝"],
+        image: "/images/services/AirConditioner_SystemEngineering.jpg",
       },
     ],
   },
@@ -73,6 +78,7 @@ export const navCategories: ServiceCategory[] = [
         description:
           "冷氣機拆除、安裝、更換、搬遷，分體式／窗口機／天花機，安裝連搭棚。",
         keywords: ["冷氣安裝", "冷氣機拆除", "更換冷氣機"],
+        image: "/images/services/AirConditioner_Removal-Installation.jpg",
       },
       {
         slug: "cleaning-maintenance",
@@ -81,14 +87,16 @@ export const navCategories: ServiceCategory[] = [
         description:
           "洗冷氣、中央冷氣清洗、深層清洗，商用住宅明碼實價，支持夜間施工。",
         keywords: ["洗冷氣", "冷氣清洗", "冷氣深層清洗"],
+        image: "/images/services/AirConditioner_Cleaning-Maintenance.jpg",
       },
       {
         slug: "repair-maintenance",
         href: "/services/repair-maintenance",
         title: "維修保養",
         description:
-          "24小時緊急維修、冷氣保養合約、定期檢測，漏水唔凍即日處理。",
-        keywords: ["冷氣維修", "冷氣保養", "24小時冷氣維修"],
+          "預約維修、冷氣保養合約、定期檢測等等。",
+        keywords: ["冷氣維修", "冷氣保養"],
+        image: "/images/services/AirConditioner_Repair-Maintenance.jpg",
       },
     ],
   },
@@ -115,7 +123,7 @@ export const specialtyServices: Service[] = [
   {
     slug: "education-fire-consulting",
     href: "/services/education-fire-consulting",
-    title: "教育中心專屬消防與結構顧問",
+    title: "教育中心專屬消防顧問",
     description:
       "1.5小時防火門、走火通道、消防通風高規格改造與合規評估。",
     keywords: ["教育機構消防", "1.5小時防火門"],

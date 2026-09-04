@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -15,7 +16,7 @@ const faqs = [
   {
     question: "點解租鋪前要做場地可行性評估？",
     answer:
-      "部分舖位受樓宇結構、後巷、座向限制，根本無法安裝合規通風或排煙系統，簽約後先知就太遲。評估一次，慳返租約、裝修幾十萬。",
+      "部分舖位受後巷、座向限制，根本無法安裝合規通風或排煙系統，簽約後先知就太遲。評估一次，慳返租約、裝修幾十萬。",
   },
   {
     question: "場地可行性評估收費點計？",
@@ -25,7 +26,7 @@ const faqs = [
   {
     question: "評估內容包括啲咩？",
     answer:
-      "包括樓宇結構及座向、後巷散熱空間、鮮風抽氣佈局、消防間隔、合規風險及改裝成本估算，並提供優化建議。",
+      "包括後巷散熱空間、鮮風抽氣佈局、消防間隔、合規風險及改裝成本估算，並提供優化建議。",
   },
 ];
 
@@ -68,6 +69,17 @@ export default function LicenceSiteConsultingPage() {
           富成工程公司提供<b>牌照與場地顧問</b>服務，由工程角度評估舖位能否出牌、優化工程方案、計算改裝成本，幫你避坑慳成本，租鋪簽約前就心中有數。
         </p>
 
+        <div className="mt-5 relative h-[250px] md:h-[450px]  w-full">
+          <Image
+            src="/images/banner/licence-site-consulting.jpg"
+            alt="冷氣通風工程服務"
+            fill
+            sizes="(max-width:1024px) 100vw, 50vw"
+            className="object-cover rounded-2xl"
+            priority
+          />
+        </div>
+
         <h2 className="mt-12 text-2xl font-bold text-slate-900">我哋嘅顧問服務</h2>
 
         <div className="mt-6 space-y-6">
@@ -80,7 +92,7 @@ export default function LicenceSiteConsultingPage() {
           <div className="rounded-2xl border border-slate-200 bg-white p-6">
             <h3 className="text-lg font-bold text-slate-900">2. 出牌風險分析</h3>
             <p className="mt-2 leading-relaxed text-slate-600">
-              逐項檢查樓宇結構、座向、後巷散熱空間、鮮風抽氣佈局、消防間隔等<b>出牌關鍵因素</b>，提前指出容易「肥佬」嘅位，並提供修正方案，避免簽約後先知死。
+              逐項檢查座向、後巷散熱空間、鮮風抽氣佈局、消防間隔等<b>出牌關鍵因素</b>，提前指出容易「肥佬」嘅位，並提供修正方案，避免簽約後先知死。
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-white p-6">
@@ -93,8 +105,8 @@ export default function LicenceSiteConsultingPage() {
 
         <h2 className="mt-12 text-2xl font-bold text-slate-900">評估流程</h2>
         <ol className="mt-5 list-decimal space-y-2 pl-5 text-slate-600">
-          <li><b>預約上門</b>：提供舖位地址及經營意向（餐廳／咖啡店／外賣店等）</li>
-          <li><b>現場勘測</b>：檢查樓宇結構、通風條件、消防間隔及後巷環境</li>
+          <li><b>預約上門</b>：提供舖位地址及經營意向（辦公室 / 餐廳／咖啡店／外賣店等）</li>
+          <li><b>現場勘測</b>：檢查通風條件、消防間隔及後巷環境</li>
           <li><b>風險報告</b>：即日提供可行性評估、工程方案及預算估算</li>
           <li><b>跟進支援</b>：如需施工，可直接安排富成工程團隊一條龍跟進</li>
         </ol>

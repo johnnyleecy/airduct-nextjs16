@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -26,6 +27,30 @@ const faqs = [
     question: "舊風喉可以更換嗎？",
     answer:
       "可以。我哋承接舊有風喉拆卸、更換及加裝工程，並會協調非營業時段施工，減低對商戶營運嘅影響。",
+  },
+];
+
+// 圖片庫數組：路徑、小標題、粵語描述
+const ventilationGallery = [
+  {
+    src: "/images/Ventilation&AirDistributionSystem/1_ductwork-rough‑in.jpeg",
+    title: "風喉現場佈局施工",
+    desc: "現場風喉粗裝作業，依照現場樓板、樑柱走向規劃風喉路線，預留足夠維修空間。",
+  },
+  {
+    src: "/images/Ventilation&AirDistributionSystem/2_Galvanized-steel-ductwork.jpeg",
+    title: "鍍鋅鋼風喉安裝",
+    desc: "採用鍍鋅鋼風喉，剛性強、防鏽耐用，廣泛用於食肆、商廈大型通風系統。",
+  },
+  {
+    src: "/images/Ventilation&AirDistributionSystem/5_Heat‑recovery-ventilation-unit.jpeg",
+    title: "熱回收通風機組",
+    desc: "熱回收新風機組安裝，在換新鮮空氣同時回收熱能，幫助客戶節省冷氣耗電。",
+  },
+  {
+    src: "/images/Ventilation&AirDistributionSystem/8_supply‑air-trunk-duct.jpeg",
+    title: "主送風風喉安裝",
+    desc: "大尺寸主送風風喉鋪設，負責整個樓層鮮風分配，嚴格控制風速，減少運行噪音。",
   },
 ];
 
@@ -67,6 +92,28 @@ export default function VentilationPage() {
         <p className="mt-3 leading-relaxed text-slate-600">
           我哋專業承接各場所<b>鮮風系統、抽氣系統、風喉風槽製作安裝、風咀定制工程</b>，全程符合香港法定出牌標準，由度呎、設計、施工到測試驗收一站式完成。
         </p>
+
+        {/* 新增：工程實景展示區塊 */}
+        <h2 className="mt-12 text-2xl font-bold text-slate-900">工程實景參考</h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {ventilationGallery.map((item, idx) => (
+            <div key={idx} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="relative h-52 w-full">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width:768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-slate-600">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
         <h2 className="mt-12 text-2xl font-bold text-slate-900">我們提供嘅風喉工程服務</h2>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
@@ -26,6 +27,35 @@ const faqs = [
     question: "冷氣系統可以淨做改裝嗎？",
     answer:
       "可以。我哋承接舊系統升級、增加室內機、更換水塔及水喉等改裝工程，並提供能源效益評估建議。",
+  },
+];
+
+// 圖片數組，包含圖片路徑、小標題、描述
+const projectGallery = [
+  {
+    src: "/images/AirConditioningSystem/3_VRV_AirConditioningSystemInstallation_1.jpeg",
+    title: "VRV多聯機安裝作業",
+    desc: "現場進行VRV室外機定位與管線鋪設，確保機組散熱與管線走線合乎規範。",
+  },
+  {
+    src: "/images/AirConditioningSystem/4_VRV_AirConditioningSystemInstallation_2.jpeg",
+    title: "VRV室內機吊裝施工",
+    desc: "商廈樓底吊裝VRV室內機，預留維修空間，配合現場天花結構規劃。",
+  },
+  {
+    src: "/images/AirConditioningSystem/6_linear-air-diffuser.jpeg",
+    title: "線型風咀安裝",
+    desc: "隱藏式線型風咀，美觀同時均勻送風，適合商鋪、寫字樓同高級餐廳。",
+  },
+  {
+    src: "/images/AirConditioningSystem/7_flexible-insulated-duct.jpeg",
+    title: "隔熱軟風喉鋪設",
+    desc: "使用優質隔熱軟風喉，減少冷量流失，防止風喉表面滴水結露問題。",
+  },
+  {
+    src: "/images/AirConditioningSystem/9_completed-mall-ceiling-access-panel.jpeg",
+    title: "商場天花完工效果",
+    desc: "商場冷氣系統完工實景，天花維修口預留妥當，方便日後保養檢修。",
   },
 ];
 
@@ -64,6 +94,28 @@ export default function AirConditioningPage() {
         <p className="mt-4 leading-relaxed text-slate-600">
           冷氣系統係建築物嘅「心臟」，選錯系統、裝錯機型，輕則耗電、製冷不均，重則影響整個場所營運。我哋涵蓋<b>大型基建至私人住宅嘅全類型製冷系統</b>，提供設計、安裝、改裝工程，因應場地規模與預算度身訂造方案。
         </p>
+
+        {/* 新增：項目實景展示區塊 */}
+        <h2 className="mt-12 text-2xl font-bold text-slate-900">工程實景參考</h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {projectGallery.map((item, idx) => (
+            <div key={idx} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="relative h-52 w-full">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width:768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-slate-600">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
         <h2 className="mt-12 text-2xl font-bold text-slate-900">我哋承接嘅冷氣系統工程</h2>
 

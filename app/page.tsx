@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { navCategories } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 import JsonLd from "@/components/JsonLd";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
+import { ShieldCheck, Wrench, Lightbulb, BadgeDollarSign } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "冷氣工程公司｜風喉工程・冷氣安裝維修保養・食肆出牌",
@@ -32,9 +34,10 @@ const homeFaqs = [
   {
     question: "咁上門睇場有冇收費？",
     answer:
-      "上門實地勘測會收取 $300 勘測費。如客戶選擇交由本公司承接有關工程，勘測費將會減半，一半費用可於工程總金額內作扣減。",
+      "住宅上門實地勘測會收取 $300 勘測費。如客戶選擇交由本公司承接有關工程，勘測費將會減半，一半費用可於工程總金額內作扣減。商業及大型工程則按工程規模，勘測費 $300 起。",
   },
 ];
+
 
 export default function HomePage() {
   return (
@@ -119,47 +122,85 @@ export default function HomePage() {
           <div key={cat.id} className="mt-12">
             <h3 className="text-xl font-bold text-slate-900">{cat.title}</h3>
             <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {cat.items.map((s) => (
-                <Link
-                  key={s.slug}
-                  href={s.href}
-                  className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <h4 className="text-lg font-bold text-slate-900 group-hover:text-sky-700">
-                    {s.title}
-                  </h4>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-500">{s.description}</p>
-                  <span className="mt-4 text-sm font-semibold text-sky-600">
-                    了解更多 →
-                  </span>
-                </Link>
-              ))}
+              {cat.items.map((s) => {
+                return (
+                  <Link
+                    key={s.slug}
+                    href={s.href}
+                    className="group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                  >
+                    {/* 直接讀取 s.image */}
+                    {s.image && (
+                      <div className="relative h-48 w-full">
+                        <Image
+                          src={s.image}
+                          alt={s.title}
+                          fill
+                          sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+                    <div className="flex flex-col flex-1 p-6">
+                      <h4 className="text-lg font-bold text-slate-900 group-hover:text-sky-700">
+                        {s.title}
+                      </h4>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-500">
+                        {s.description}
+                      </p>
+                      <span className="mt-4 text-sm font-semibold text-sky-600">
+                        了解更多 →
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         ))}
       </section>
 
+
       {/* Why us */}
       <section className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-          <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
-            點解揀富成工程公司？
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { t: "持牌專業團隊", d: "註冊電業承辦商，工程符合機電工程署及消防處要求，出牌工程有保證。" },
-              { t: "一站式服務", d: "風喉、冷氣、清洗、保養、出牌顧問一條龍，唔使多頭搵人夾。" },
-              { t: "獨家技術", d: "行內少有嘅無滴汗風咀技術，消防處認證，徹底解決風咀滴水問題。" },
-              { t: "透明報價", d: "親身上門度呎，明碼實價，絕無隱藏收費。" },
-            ].map((item) => (
-              <div key={item.t} className="rounded-2xl border border-slate-200 bg-white p-6">
-                <h3 className="font-bold text-slate-900">{item.t}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-500">{item.d}</p>
-              </div>
-            ))}
+  <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
+      點解揀富成工程公司？
+    </h2>
+    <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {[
+        {
+          icon: <ShieldCheck className="h-8 w-8 text-sky-600" />,
+          t: "持牌專業團隊",
+          d: "註冊電業承辦商，工程符合機電工程署及消防處要求，出牌工程有保證。"
+        },
+        {
+          icon: <Wrench className="h-8 w-8 text-sky-600" />,
+          t: "一站式服務",
+          d: "風喉、冷氣、清洗、保養、出牌顧問一條龍，唔使多頭搵人夾。"
+        },
+        {
+          icon: <Lightbulb className="h-8 w-8 text-sky-600" />,
+          t: "獨家技術",
+          d: "行內少有嘅無滴汗風咀技術，消防處認證，徹底解決風咀滴水問題。"
+        },
+        {
+          icon: <BadgeDollarSign className="h-8 w-8 text-sky-600" />,
+          t: "透明報價",
+          d: "親身上門度呎，明碼實價，絕無隱藏收費。"
+        },
+      ].map((item, idx) => (
+        <div key={idx} className="rounded-2xl border border-slate-200 bg-white p-6">
+          <div className="mb-4">
+            {item.icon}
           </div>
+          <h3 className="font-bold text-slate-900">{item.t}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-slate-500">{item.d}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* FAQ */}
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6">

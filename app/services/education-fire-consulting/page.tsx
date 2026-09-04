@@ -7,7 +7,7 @@ import FAQ from "@/components/FAQ";
 export const metadata: Metadata = {
   title: "教育中心消防顧問｜1.5小時防火門・消防通風改造",
   description:
-    "專為教育中心提供消防與結構合規顧問：1.5小時防火門、特殊走火通道、消防通風高規格改造，符合教育局及消防處要求，專業評估＋施工一條龍。",
+    "專為教育中心提供消防合規顧問：1.5小時防火門、特殊走火通道、消防通風高規格改造，符合教育局及消防處要求，專業評估＋施工一條龍。",
   alternates: { canonical: "/services/education-fire-consulting" },
 };
 
@@ -34,7 +34,7 @@ const services = [
   ["1.5小時防火門工程", "更換／安裝，連同門框配件一次過"],
   ["走火通道改造", "通道闊度、出口設計、疏散路線優化"],
   ["消防通風改造", "防火風喉、防煙分隔、排煙系統"],
-  ["結構合規顧問", "間隔改動、承重評估、審批文件"],
+  ["防火間隔規劃", "防火分隔、防火物料、審批文件"],
   ["出牌文件支援", "消防處表格、圖則、證明文件準備"],
 ];
 
@@ -45,7 +45,7 @@ export default function EducationFirePage() {
         data={{
           "@context": "https://schema.org",
           "@type": "Service",
-          name: "教育中心專屬消防與結構顧問",
+          name: "教育中心專屬消防顧問",
           serviceType: "教育機構消防顧問・防火門工程",
           provider: { "@type": "HomeAndConstructionBusiness", name: "富成工程公司" },
           areaServed: "香港",
@@ -68,20 +68,20 @@ export default function EducationFirePage() {
 
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
         <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-          教育中心消防與結構顧問｜高規格合規改造、評估一站式服務
+          教育中心消防顧問｜高規格合規改造、評估一站式服務
         </h1>
         <p className="mt-4 leading-relaxed text-slate-600">
           教育中心嘅消防合規要求，係全港<b>最高規格</b>之一：小朋友嘅安全不容有失，教育局、消防處對<b>防火門規格、走火通道、消防通風</b>都有嚴格規定。好多教育中心裝修完先發現唔合規，要拆要改，錢使咗之餘仲要停課整改，損失慘重。
         </p>
         <p className="mt-3 leading-relaxed text-slate-600">
-          我哋專為<b>教育中心、補習社、幼稚園、學校</b>提供<b>消防與結構合規顧問</b>，熟悉教育機構獨有嘅高規格要求，提供專業改造與合規評估服務，助你一次過通過審批，安心開課。
+          我哋專為<b>教育中心、補習社、幼稚園、學校</b>提供<b>消防合規顧問</b>，熟悉教育機構獨有嘅高規格要求，提供專業改造與合規評估服務，助你一次過通過審批，安心開課。
         </p>
 
         <h2 className="mt-12 text-2xl font-bold text-slate-900">教育中心消防合規嘅特殊要求</h2>
 
         <div className="mt-6 space-y-6">
           <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <h3 className="text-lg font-bold text-slate-900">1. 1.5小時防火門（耐火結構）</h3>
+            <h3 className="text-lg font-bold text-slate-900">1. 1.5小時防火門（耐火規格）</h3>
             <p className="mt-2 leading-relaxed text-slate-600">
               教育機構嘅防火門要求遠比一般商舖嚴格：需符合<b>1.5小時耐火</b>規格，連同門框、門鉸、閉門器一併符合標準。我哋熟悉教育局及消防處對<b>防火門</b>嘅完整要求，提供檢測、更換、安裝一條龍，確保達標。
             </p>
