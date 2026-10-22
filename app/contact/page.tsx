@@ -41,7 +41,7 @@ export default function ContactPage() {
             <p className="mt-1 text-sm text-slate-500">{siteConfig.phone}</p>
           </a>
           <a
-            href={siteConfig.phoneHref}
+            href={siteConfig.phone}
             className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:shadow-md"
           >
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-400">電話</p>

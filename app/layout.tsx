@@ -1,3 +1,4 @@
+// layout.tsx
 import type { Metadata, Viewport } from "next";
 import { siteConfig } from "@/lib/site";
 import Header from "@/components/Header";
@@ -43,6 +44,10 @@ export const metadata: Metadata = {
     apple: "/apple-icon.png",
   },
   manifest: "/manifest.webmanifest",
+  // ✅ Google Site Verification
+  other: {
+    "google-site-verification": "_udMfRgyQfyuEYBRJPjFlgQ7GmCmxfuJ_O9dcJPxlPE",
+  },
 };
 
 export const viewport: Viewport = {

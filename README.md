@@ -4,3 +4,17 @@
 - **React 19.2**、**TypeScript 5**、**Tailwind CSS v4**
 - node version v22.19.0
 
+### 2026.9.14
+
+    app/contact/page.tsx
+    line44, href={siteConfig.phone}
+
+    app/layout.tsx
+    line47-50, Google Site Verification
+
+    public/robots.txt
+    public/sitemap.xml
+    public/manifest.webmanifest
+    
+    lib/site.ts
+    Changed real site path

@@ -1,0 +1,13 @@
+{
+  "name": "富成工程公司",
+  "short_name": "富成工程",
+  "description": "富成工程公司——註冊冷氣工程公司，提供風喉工程、冷氣安裝、洗冷氣、冷氣維修保養、VRV多聯機安裝、食肆通風出牌、無滴汗風咀及豪宅恆溫通風等一站式冷氣通風工程，上門度呎報價。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0284c7",
+  "icons": [
+    { "src": "/icon.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/apple-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

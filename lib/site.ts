@@ -5,7 +5,7 @@
 export const siteConfig = {
   name: "富成工程公司",
   legalName: "富成工程公司",
-  url: "https://www.airduct.com.hk", // TODO: 上線後改為正式網址
+  url: "https://bluesea.fit", 
   description:
     "富成工程公司——註冊冷氣工程公司，提供風喉工程、冷氣安裝、洗冷氣、冷氣維修保養、VRV多聯機安裝、食肆通風出牌、無滴汗風咀及豪宅恆溫通風等一站式冷氣通風工程，上門度呎報價。",
   keywords: [
@@ -22,17 +22,17 @@ export const siteConfig = {
     "冷氣保養合約",
     "冷氣清洗",
   ],
-  phone: "+85265776013", // TODO: 改為真實電話
-  phonenumber: "6577 6013", // TODO: 改為真實電話
-  whatsapp: "https://wa.me/85265776013", // TODO: 改為真實 WhatsApp 號碼
-  email: "info@airduct.com.hk", // TODO: 改為真實電郵
+  phone: "+85265776013", 
+  phonenumber: "6577 6013",
+  whatsapp: "https://wa.me/85265776013", 
+  email: "", 
   address: "九龍土瓜灣馬頭角道40號東南工廠大廈1字樓A2座R單位",
-  geo: { lat: 22.3167, lng: 114.1905 }, // TODO: 改為實際座標（現為土瓜灣約略）
+  geo: { lat: 22.3167, lng: 114.1905 }, 
   hours: "星期一至日 09:00–18:00",
   regions:
     "香港島（中環、灣仔、銅鑼灣、北角、鰂魚涌）・九龍（土瓜灣、紅磡、觀塘、旺角、九龍灣、長沙灣、深水埗）・新界（荃灣、沙田、元朗、屯門、將軍澳、大埔、上水）",
   social: {
-    facebook: "https://www.facebook.com/", // TODO
-    instagram: "https://www.instagram.com/", // TODO
+    facebook: "", 
+    instagram: "", 
   },
 };
